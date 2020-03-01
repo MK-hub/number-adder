@@ -1,7 +1,7 @@
 package com.example.numberadder.service;
 
-import com.example.numberadder.persistence.repo.UrlParamsRepository;
 import com.example.numberadder.persistence.model.UrlParamsEntity;
+import com.example.numberadder.persistence.repo.UrlParamsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

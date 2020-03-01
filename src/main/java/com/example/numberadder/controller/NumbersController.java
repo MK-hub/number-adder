@@ -20,6 +20,6 @@ public class NumbersController {
 
     @GetMapping("/adding")
     public String getSum() {
-        return applicationService.addingNumbers(1,20);
+        return applicationService.addingNumbers(1, 20);
     }
 }
