@@ -1,6 +1,6 @@
 package com.example.numberadder.service;
 
-import com.example.numberadder.persistence.model.UrlParamsEntity;
+import com.example.numberadder.persistence.model.UrlParams;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,12 +42,12 @@ public class ApplicationService {
         int sum = numberFromApi + numberFromDatabase;
         log.info("Adding two numbers:{} and {}", numberFromApi, numberFromDatabase);
         return String
-                .format("Adding two digits: %1d and %2d >>>> result is %3d", numberFromApi, numberFromDatabase, sum);
+                .format("Adding two digits: %1d and %2d >> result is %3d", numberFromApi, numberFromDatabase, sum);
     }
 
     public int getNumberFromDataBase() {
         int rndNumber = r.ints(1, 1, 11).findFirst().getAsInt();
-        UrlParamsEntity databaseParams = urlParamsService
+        UrlParams databaseParams = urlParamsService
                 .getParametersById(r.ints(1, 4).findFirst().getAsInt());
         if (isNull(databaseParams)) {
             log.info("Empty database, generating rnd number");

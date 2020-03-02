@@ -13,13 +13,9 @@ public class NumbersController {
     @Autowired
     ApplicationService applicationService;
 
-    @GetMapping("/database")
-    public int getNumber() {
-        return applicationService.getNumberFromDataBase();
-    }
-
     @GetMapping("/adding")
-    public String getSum() {
-        return applicationService.addingNumbers(1, 20);
+    public String getSum(@RequestParam(value = "minvalue") int minValue,
+                         @RequestParam(value = "maxvalue") int maxValue) {
+        return applicationService.addingNumbers(minValue, maxValue);
     }
 }

@@ -9,7 +9,7 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-public class UrlParamsEntity {
+public class UrlParams {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
