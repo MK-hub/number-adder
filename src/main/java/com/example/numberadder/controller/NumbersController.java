@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class NumbersController {
 
     @Autowired
-    ApplicationService applicationService;
+    private ApplicationService applicationService;
 
     @GetMapping("/adding")
     public String getSum(@RequestParam(value = "minvalue") int minValue,

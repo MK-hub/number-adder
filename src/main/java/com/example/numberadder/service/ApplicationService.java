@@ -15,11 +15,11 @@ import static java.util.Objects.isNull;
 @Service
 public class ApplicationService {
 
-    protected final Logger log = LoggerFactory.getLogger(getClass());
+    private static final Logger LOG = LoggerFactory.getLogger(ApplicationService.class);
     @Autowired
     private RestTemplate restTemplate;
     @Autowired
-    UrlParamsService urlParamsService;
+    private UrlParamsService urlParamsService;
     private Random r = new Random();
 
     public Integer getNumberFromApi(int minimalValue, int maximalValue) {
@@ -31,7 +31,7 @@ public class ApplicationService {
         if (result != null) {
             return Integer.parseInt(result.trim());
         } else {
-            log.info("No value from external API. returning 0");
+            LOG.info("No value from external API. returning 0");
             return 0;
         }
     }
@@ -50,7 +50,7 @@ public class ApplicationService {
         UrlParams databaseParams = urlParamsService
                 .getParametersById(r.ints(1, 4).findFirst().getAsInt());
         if (isNull(databaseParams)) {
-            log.info("Empty database, generating rnd number");
+            LOG.info("Empty database, generating rnd number");
             return rndNumber;
         } else {
             return Optional.of(databaseParams.getBaseValue()).orElse(rndNumber);
