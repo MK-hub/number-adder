@@ -9,9 +9,13 @@ import org.springframework.stereotype.Service;
 public class UrlParamsService {
 
     @Autowired
-    UrlParamsRepository urlParamsRepository;
+    private UrlParamsRepository urlParamsRepository;
 
     public UrlParams getParametersById(int id) {
         return urlParamsRepository.findById(id).orElse(null);
+    }
+
+    public long count() {
+        return urlParamsRepository.count();
     }
 }

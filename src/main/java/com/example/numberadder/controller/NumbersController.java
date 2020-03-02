@@ -4,6 +4,7 @@ import com.example.numberadder.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @Controller
@@ -11,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class NumbersController {
 
     @Autowired
-    ApplicationService applicationService;
+    private ApplicationService applicationService;
 
     @GetMapping("/adding")
-    public String getSum(@RequestParam(value = "minvalue") int minValue,
-                         @RequestParam(value = "maxvalue") int maxValue) {
+    public String getSum(@RequestParam(value = "minValue") int minValue,
+                         @RequestParam(value = "maxValue") int maxValue) {
         return applicationService.addingNumbers(minValue, maxValue);
     }
 }

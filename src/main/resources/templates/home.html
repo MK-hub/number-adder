@@ -1,13 +1,14 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
 <head><title>Home Page</title></head>
 <body>
-<h1>It's working somehow</h1>
-<span th:text="${appName}"></span>
+<h1><span th:text="${appName}"></span></h1>
+<p><span>Select range for a random number from external API, second number will be chosen randomly from database</span>
+</p>
 <h1>Enter number range</h1>
 <form action="#" th:action="@{/adding}" th:object="${UrlParams}" method="get">
-    <p>min value: <input type="number" th:name="*minValue" /></p>
-    <p>max value: <input type="number" th:name="*maxValue" /></p>
-    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    <p>min value: <input type="number" th:name="minValue"/></p>
+    <p>max value: <input type="number" th:name="maxValue"/></p>
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
 </form>
 </body>
 </html>
