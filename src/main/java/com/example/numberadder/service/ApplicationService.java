@@ -16,12 +16,16 @@ import static java.util.Objects.isNull;
 public class ApplicationService {
 
     private static final Logger LOG = LoggerFactory.getLogger(ApplicationService.class);
+
     private static final int RANDOM_NUMBER_ORIGIN = 1;
     private static final int RANDOM_NUMBER_BOUND = 11;
+
     @Autowired
     private RestTemplate restTemplate;
+
     @Autowired
     private UrlParamsService urlParamsService;
+
     private Random r = new Random();
 
     public Integer getNumberFromApi(int minimalValue, int maximalValue) {
